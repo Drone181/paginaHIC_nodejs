@@ -71,6 +71,16 @@ const routes = {
     resp.writeHead(200, { 'Content-Type': 'text/html' })
     resp.end(htmlfile)
   },
+  '/new-post': (req, resp) => {
+    /* resp.setHeader('Content-Type', 'text/html')
+    resp.writeHead(200)
+    // resp.write('Hola mundo')
+    resp.end('<html><body><h1> Formato Html</h1></body></html>') */
+    const htmlfile = fs.readFileSync('./public/new-post.html')
+    // resp.setHeader('Content-Type', 'text/html')
+    resp.writeHead(200, { 'Content-Type': 'text/html' })
+    resp.end(htmlfile)
+  },
   '/csv': (req, resp) => {
     // resp.setHeader('Content-Type', 'text/csv')
     resp.setHeader('Content-Disposition', 'attachment;filename=amigos.csv')
@@ -88,7 +98,7 @@ const server = http.createServer((req, resp) => {
   // resp.writeHead(200)
   // resp.write('Hola mundo')
   // resp.end('Hola mundo')
-  if (req.url.startsWith('/Resources/') || req.url.startsWith('/Resources-login/') || req.url.startsWith('/css/') || req.url.startsWith('/js/')) {
+  if (req.url.startsWith('/Resources/') || req.url.startsWith('/css/') || req.url.startsWith('/js/')) {
     serveStatic(req, resp)
   } else if (req.url in routes) {
     routes[req.url](req, resp)
