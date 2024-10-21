@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_page</title>
+    <!-- Enlace a CSS-->
+    <link rel="stylesheet" href="css/login-style.css">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form-box login">
+            <h1>Login</h1>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn">Login</button>
+
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a></p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="icon">
+                        <i class='bx bxl-google-plus'></i>
+                    </a>
+                    <a href="#" class="icon">
+                        <i class='bx bxl-facebook'></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h1>Registration</h1>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="mail" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Confirm password" required>
+                    <i class='bx bxs-check-shield'></i>
+                </div>
+                
+                <div class="remember-forgot">
+                    <label><input type="checkbox"> I agree to the terms & conditions</label>
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+
+                <div class="register-link">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enlace a javaScript-->
+    <script src="js/login-script.js"></script>
+</body>
+
+</html>

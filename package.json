@@ -1,0 +1,36 @@
+{
+  "name": "programa_nodejs",
+  "version": "1.0.0",
+  "description": "El mejor curso de node por 0mxn",
+  "main": "index.js",
+  "dependencies": {
+    "picocolors": "1.1.1",
+    "undici-types": "^6.19.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drone181/programa_nodejs.git"
+  },
+  "keywords": [
+    "curso",
+    "node",
+    "nodejs",
+    "midudev"
+  ],
+  "author": "Miguel Angel Duran Garcia - midudev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drone181/programa_nodejs/issues"
+  },
+  "homepage": "https://github.com/Drone181/programa_nodejs#readme",
+  "devDependencies": {
+    "@types/node": "^22.7.7",
+    "standard": "17.1.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
