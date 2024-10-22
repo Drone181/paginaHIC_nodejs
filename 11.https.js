@@ -32,60 +32,23 @@ const serveStatic = (req, resp) => {
 }
 
 const routes = {
-  '/': (req, resp) => {
-    resp.statusCode = 200
-    resp.writeHead(200)
-    resp.write('Hola mundo')
-    resp.end()
-  },
-  '/json': (req, resp) => {
-    // resp.setHeader('Content-Type', 'aplication/json')  descarga un archivo con el contenido del json
-    // resp.setHeader('Content-Type', 'text/json')
-    resp.writeHead(200)
-    // resp.write('Hola mundo')
-    const objeto = {
-      frase: 'Hola',
-      edad: 23,
-      cursos: ['PHP', 'Python', 'JavaScript', 'Node.js', 'C#', 'Java']
-    }
-    resp.end(JSON.stringify(objeto))
-    // resp.end('{"mensaje": "Contenido en formato JSON."}')
-  },
-  '/html': (req, resp) => {
-    /* resp.setHeader('Content-Type', 'text/html')
-    resp.writeHead(200)
-    // resp.write('Hola mundo')
-    resp.end('<html><body><h1> Formato Html</h1></body></html>') */
+  '/index': (req, resp) => {
     const htmlfile = fs.readFileSync('./public/index.html')
-    // resp.setHeader('Content-Type', 'text/html')
+
     resp.writeHead(200, { 'Content-Type': 'text/html' })
     resp.end(htmlfile)
   },
   '/login': (req, resp) => {
-    /* resp.setHeader('Content-Type', 'text/html')
-    resp.writeHead(200)
-    // resp.write('Hola mundo')
-    resp.end('<html><body><h1> Formato Html</h1></body></html>') */
     const htmlfile = fs.readFileSync('./public/login.html')
-    // resp.setHeader('Content-Type', 'text/html')
+
     resp.writeHead(200, { 'Content-Type': 'text/html' })
     resp.end(htmlfile)
   },
   '/new-post': (req, resp) => {
-    /* resp.setHeader('Content-Type', 'text/html')
-    resp.writeHead(200)
-    // resp.write('Hola mundo')
-    resp.end('<html><body><h1> Formato Html</h1></body></html>') */
     const htmlfile = fs.readFileSync('./public/new-post.html')
-    // resp.setHeader('Content-Type', 'text/html')
+
     resp.writeHead(200, { 'Content-Type': 'text/html' })
     resp.end(htmlfile)
-  },
-  '/csv': (req, resp) => {
-    // resp.setHeader('Content-Type', 'text/csv')
-    resp.setHeader('Content-Disposition', 'attachment;filename=amigos.csv')
-    resp.writeHead(200)
-    resp.end('codigo,nombre,email\n123,Kevin Guzman,kevin.com')
   }
 }
 
@@ -95,9 +58,7 @@ const server = http.createServer((req, resp) => {
   console.log(req.method)
   console.log(req.headers)
   console.log(req.headers['user-agent'])
-  // resp.writeHead(200)
-  // resp.write('Hola mundo')
-  // resp.end('Hola mundo')
+
   if (req.url.startsWith('/Resources/') || req.url.startsWith('/css/') || req.url.startsWith('/js/')) {
     serveStatic(req, resp)
   } else if (req.url in routes) {
@@ -110,6 +71,6 @@ const server = http.createServer((req, resp) => {
 
 findAvailablePort(1234).then(port => {
   server.listen(port, () => {
-    console.log(`server listening on port http://localhost:${port}/html`)
+    console.log(`server listening on port http://localhost:${port}/index`)
   })
 })
